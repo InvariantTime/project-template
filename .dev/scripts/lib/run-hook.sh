@@ -12,8 +12,8 @@ if [[ ! $hook =~ ^[a-zA-Z_][a-zA-Z0-9_]*$ ]] || ! declare -F "$hook" >/dev/null;
 marker_dir=$(mktemp -d)
 child=''
 watcher=''
-# Called by the EXIT trap.
-# shellcheck disable=SC2329
+# Called indirectly by the EXIT trap; older ShellCheck versions flag the body as unreachable.
+# shellcheck disable=SC2317,SC2329
 cleanup() {
   [[ -z $watcher ]] || kill "$watcher" 2>/dev/null || true
   [[ -z $child ]] || kill "$child" 2>/dev/null || true
