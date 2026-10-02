@@ -1,0 +1,21 @@
+---
+name: {{NAME}}
+description: '{{DESCRIPTION}}'
+---
+
+# {{NAME}}
+
+SKILL_DRAFT: Complete this workflow and remove this marker before validation.
+
+## Evidence and scope
+
+Specify which project files or observations establish context and when this skill applies.
+
+## Workflow
+
+Replace this section with concrete steps, decision points, and expected outputs.
+State any authorization requirement directly before the relevant action.
+
+## Verification
+
+Explain how to verify the result and what those checks do not prove.

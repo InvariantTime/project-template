@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install lint dependency
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+      # Adopting projects install their pinned toolchain and dependencies here.
+      - name: Check environment
+        run: bash .dev/scripts/doctor.sh --lint
+      - name: Verify repository
+        run: bash .dev/scripts/check.sh
+      - name: Upload verification report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: verification-report
+          path: .dev/artifacts/check-report.md
+          if-no-files-found: warn
+          include-hidden-files: true

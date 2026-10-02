@@ -1,0 +1,27 @@
+# Task handoff: <short title>
+
+Captured at: <timestamp with timezone>  
+Task ID: <task-id>  
+Repository: <repository path and known remote>  
+Branch / HEAD: <observed branch and commit, or no commit yet>  
+Issue / PR: <known links, or none supplied>
+
+## Goal
+
+State the intended outcome and scope relevant to the next session.
+
+## Completed work and current changes
+
+Summarize observed progress and affected paths. Identify unfinished work and pre-existing changes when known. Link canonical documents, commits, or diffs instead of copying their contents.
+
+## Verification
+
+List commands actually run, their observed results, the state they apply to, and any unverified behavior. Use "Not checked" where evidence is unavailable.
+
+## Open questions and blockers
+
+List unresolved decisions or concrete blockers. Distinguish hypotheses from established facts. Use "None observed" when appropriate.
+
+## Next step
+
+Give one concrete starting action and any dependent follow-up. Include relevant references or suggested skills only when they help the next agent proceed.

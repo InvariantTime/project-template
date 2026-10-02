@@ -1,0 +1,12 @@
+# Local environment and generated verification output
+.env
+.env.*
+!.env.example
+.dev/artifacts/
+.artifacts/
+
+# Editors and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
