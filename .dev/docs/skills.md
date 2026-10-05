@@ -7,7 +7,7 @@ Skills live in `.agents/skills/<name>/SKILL.md`, which compatible coding agents 
 | project-onboarding | Adapt context, hooks, tool requirements, and CI for a new project. | Explicit only |
 | github-issues | Read tasks and perform authorized Issue operations. | Explicit or implicit |
 | domain-modeling | Define concepts and invariants before implementation. | Explicit or implicit |
-| domain-explainer | Answer domain questions with a grounded HTML guide, examples, and explanatory visuals. | Explicit or implicit |
+| domain-explainer | Answer focused domain questions with a diagram, or larger questions with a black-theme HTML guide. | Explicit or implicit |
 | diagnose-bug | Reproduce, diagnose, fix, and verify defects. | Explicit or implicit |
 | review-change | Inspect changes and report actionable findings. | Explicit or implicit |
 | create-project-skill | Reuse, scaffold, refine, and validate repository skills. | Explicit or implicit |
@@ -39,13 +39,14 @@ For repository validation, use a block-style `policy:` mapping, two-space indent
 
 ## Domain explanation pages
 
-Use `domain-explainer` for a question about a project concept, rule, relationship, or scenario. It reads current project knowledge and delivers a detailed standalone HTML page, using diagrams, illustrations, navigation, or interactions when they help understanding. Accepted definitions, proposals, unknowns, and illustrative examples remain distinct. Defining or changing a canonical concept belongs to `domain-modeling`.
+Use `domain-explainer` for a question about a project concept, rule, relationship, or scenario. A focused answer uses short text and a diagram. A larger explanation uses a separate HTML page with a black theme. Pages can include illustrations, navigation, animation, and interaction. Keep prose concise and aim to use ASD-STE100 principles for about 80% of authored explanation text, without a compliance calculation. Accepted definitions, proposals, unknowns, and examples remain distinct. Defining or changing a canonical concept belongs to `domain-modeling`.
 
 ```text
+$domain-explainer What is an acceptance criterion? Give a short answer and a diagram.
 $domain-explainer Explain how acceptance criteria relate to verification and Issue completion. Build a visual HTML guide with a worked example.
 ```
 
-Pages default to `.dev/artifacts/domain-explanations/<topic>/index.html`, with inline styles, scripts, and SVG where practical. They open without a build or external dependencies. The agent checks content against sources, inspects the actual page in a browser when available, and returns the file with observed verification limits. Follow-up edits reuse the requested page. These artifacts are ignored by Git and capture a point-in-time explanation; request a tracked documentation destination when the guide should be versioned. This workflow does not publish a website or update canonical definitions automatically.
+Pages default to `.dev/artifacts/domain-explanations/<topic>/index.html`, with inline styles, scripts, and SVG where practical. They need no build or external dependencies. The agent reviews sources and files, then returns the result. Mobile layouts and browser verification are not part of this workflow. Follow-up edits reuse the requested page. These artifacts are ignored by Git and capture a point-in-time explanation; request a tracked documentation destination when the guide should be versioned. This workflow does not publish a website or update canonical definitions automatically.
 
 ## Task handoff
 

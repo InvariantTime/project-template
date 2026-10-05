@@ -46,7 +46,7 @@ Use GitHub's **Use this template** flow after enabling **Template repository** i
 
 Start agent-guided adaptation explicitly with `$project-onboarding` and the product description. This skill does not start automatically. New skills can opt into the same policy with `new-skill.sh --manual-only`; see [Agent skills](.dev/docs/skills.md).
 
-Ask `$domain-explainer` to explain a project domain question through a standalone HTML guide with examples, diagrams, and useful interactions. Guides are local artifacts by default; see [domain explanation pages](.dev/docs/skills.md#domain-explanation-pages).
+Ask `$domain-explainer` to answer a focused domain question with short text and a diagram, or a larger question with a black-theme HTML guide. Guides can include illustrations, animation, and interaction. HTML guides are local artifacts by default; see [domain explanation pages](.dev/docs/skills.md#domain-explanation-pages).
 
 - [Project context](docs/project.md) and [domain glossary](docs/glossary.md)
 - [Development workflow](.dev/docs/workflow.md) and [environment setup](.dev/docs/environment.md)
