@@ -1,41 +1,43 @@
-# Designing a domain explanation page
+# Design an HTML domain explanation
 
-Use this guide to choose the smallest presentation that makes the specific question understandable. The output is an educational document, not a new application or a fixed dashboard layout.
+Use this guide only for the HTML route. A focused question normally needs short text and a diagram in chat.
 
-## Teaching structure
+## Content
 
-- Lead with the question and a direct answer. Give the reader a reason to explore the rest.
-- Introduce terms just before they are needed. Connect each abstract rule to the same worked scenario so the reader can follow its consequences.
-- Explain relationships, permitted changes, invariants, and boundaries only when relevant to the question. Include a near-miss example that shows where the concept stops applying.
-- Offer progressive detail through section links and native `details` elements. Essential qualifications and the main answer must remain visible.
-- Separate accepted rules from proposals and examples at the point of use. Show conflicting sources or unknowns explicitly. Put compact source references beside consequential claims, with paths and relevant supporting text in the sources section.
+- Start with the question and its answer.
+- Use short sections. Keep about 80% of authored prose in the ASD-STE100 style described in `SKILL.md`. Do not calculate a compliance score.
+- Use one concrete example across the page when possible.
+- Keep important conditions visible. Use section links or `details` for optional depth.
+- Label examples, proposals, and unknowns where they appear. Add source references beside claims and a compact source list.
+- Explain terms before using them in a diagram or control. A large topic needs more structure, not longer sentences.
 
-## Visual choices
+## Black theme
 
-| Reader's difficulty | Useful presentation | Required explanation |
-| --- | --- | --- |
-| Understanding relationships | Labeled SVG diagram | Text stating what the nodes and edges mean |
-| Following a process | Numbered stages with an optional step control | Ordering, transition conditions, and exceptions |
-| Comparing alternatives | Side-by-side examples or a table | Common comparison criteria and decision status |
-| Understanding consequences | A small control that changes one assumption | What varies, what stays fixed, and why the output changes |
-| Understanding space | An annotated illustration or map | Scale and which details are schematic |
+- Use a black page background, such as `#000000`, and dark panels, such as `#111111`.
+- Use light primary text, such as `#f2f2f2`, and readable secondary text, such as `#b8b8b8`.
+- Use a restrained accent color for links, focus, and the relevant part of a visual. Color must not be the only signal.
+- Use system fonts, a clear heading hierarchy, comfortable line lengths, and space between sections.
+- Design for desktop. Do not add mobile breakpoints, alternate phone diagrams, or print styles unless requested.
 
-Give every control an educational purpose. Prefer buttons, radios, selects, and native disclosures over drag-only interactions. Label illustrative calculations and scenarios; their outputs are not authoritative world state or proof that an Issue is complete.
+## Visuals and interaction
 
-## Presentation baseline
+| Question | Useful visual |
+| --- | --- |
+| How are concepts related? | A labeled SVG diagram |
+| What happens next? | Stages, transitions, or an animated sequence |
+| What changes under an assumption? | A small interactive scenario |
+| How do cases differ? | A comparison diagram or table |
+| What does a spatial concept mean? | An annotated illustration |
 
-- Use a clear typographic hierarchy, comfortable line lengths, whitespace, and a restrained color palette. Important meaning must not depend on color alone.
-- Set UTF-8, a meaningful document title, `lang`, and a viewport meta tag. Use one `h1`, logical section headings, landmarks, and a keyboard-accessible table of contents.
-- Prefer inline SVG with accessible title/description and an adjacent text summary. Use meaningful alt text for other illustrations. Escape source text inserted into HTML; use `textContent` for dynamic text.
-- Keep core content present in HTML. JavaScript can enhance a visual, but a failed script must not hide the answer. Use system fonts and local assets by default, avoiding remote fonts, CDNs, analytics, and runtime fetches.
-- Make layouts wrap on narrow screens. Avoid clipped diagrams, fixed desktop widths, and sticky navigation that covers anchors or keyboard focus.
-- Animate a visible change only to explain it. Provide pause/replay for long sequences, avoid autoplay loops, and honor `prefers-reduced-motion` in CSS and JavaScript when applicable.
-- Provide print CSS that keeps the explanation and source references readable, removes purely interactive controls, and exposes necessary collapsed details. Provide static summaries for interactive scenarios.
+Illustrations, animation, and interaction can carry the explanation. They need not be limited to decoration. Choose them when they reduce the text needed to understand the question.
 
-## Browser acceptance pass
+- Label nodes, edges, stages, and controls. Include a short text explanation of their meaning.
+- State what a scenario changes and what it keeps fixed. Label illustrative outputs.
+- Use buttons, radios, selects, and native disclosures when suitable. Avoid drag-only controls.
+- Show one change at a time in an animated sequence. Provide pause or replay for long sequences and honor reduced motion where applicable.
+- Use accessible SVG titles or image alt text, visible focus, and semantic HTML. Use `textContent` for dynamic text.
+- Keep the answer readable without JavaScript. Use local assets and inline code instead of CDNs, remote fonts, or runtime fetches.
 
-1. Open the delivered file, or its exact content served through a loopback-only server. Confirm the initial answer and sources are readable with no external requests needed.
-2. Inspect a desktop width (about 1280 px) and a phone width (about 390 px). Look for overflow, covered anchors, illegible labels, and cramped controls.
-3. Exercise navigation, disclosures, and all scenario controls. Verify results against the intended rules, including a boundary case. Inspect keyboard tab order and focus visibility.
-4. Check reduced-motion presentation and print preview when the tool supports them. Check that the essential explanation remains available without JavaScript. Do not report unsupported checks as passed.
-5. Fix observed defects and repeat the affected checks. Deliver the HTML with a concise record of actual checks and limitations; browser inspection of this page does not verify the product it explains.
+## Lightweight review
+
+Read the files to check source accuracy, labels, internal links, asset paths, and interaction logic. Fix clear errors found in this review. Do not add a browser test, local server, screenshot pass, mobile calculation, or mandatory language checker. Do not claim visual or runtime verification from file review.

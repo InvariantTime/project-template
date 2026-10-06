@@ -19,7 +19,7 @@ This repository starts in template mode. Do not infer an application stack or pr
 
 GitHub Issues are the main task source. Read the selected issue and comments before implementing it. See `.dev/docs/github-issues.md`; do not duplicate issue status in local task files.
 
-Use relevant skills from `.agents/skills/`: `project-onboarding`, `github-issues`, `domain-modeling`, `domain-explainer`, `diagnose-bug`, `review-change`, `create-project-skill`, and `handoff`. Use `domain-explainer` for a detailed HTML explanation of a domain question, and `domain-modeling` to establish or change canonical concepts. Repository-wide paths in skills are relative to the repository root; supporting assets are relative to the skill directory.
+Use relevant skills from `.agents/skills/`: `project-onboarding`, `github-issues`, `domain-modeling`, `domain-explainer`, `diagnose-bug`, `review-change`, `create-project-skill`, and `handoff`. Use `domain-explainer` for a concise domain answer with a diagram, or a black-theme HTML page for a larger question. Use `domain-modeling` to establish or change canonical concepts. Repository-wide paths in skills are relative to the repository root; supporting assets are relative to the skill directory.
 
 `project-onboarding` and `handoff` require explicit user invocation. Their Codex policies are in each skill's `agents/openai.yaml`. Other shipped skills allow implicit selection. Respect each skill's invocation policy; do not automatically chain into these entry points.
 
