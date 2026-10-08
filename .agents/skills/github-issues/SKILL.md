@@ -16,7 +16,7 @@ Read `.dev/docs/github-issues.md` for commands and `.dev/docs/workflow.md` for t
 
 ## Create or update when authorized
 
-The user's request to create, comment on, edit, or close an issue authorizes that operation. Continue within that authorization without repeated confirmation. If remote writing has not been authorized, prepare a reviewable body file and ask before publishing it. Local implementation work does not itself authorize a remote comment or closure.
+The user's request to create, comment on, edit, or close an issue authorizes that operation. Continue within that authorization without repeated confirmation. If remote writing has not been authorized, present a proposed body in chat and ask before publishing it. Save a local draft only when the user requested that artifact; an authorized publication request permits preparing its body file. Local implementation work does not itself authorize a remote comment or closure.
 
 Write Markdown to a file, then use `--body-file`; never interpolate multiline bodies into a shell command. For a new task include problem, scope, acceptance criteria, dependencies, and verification plan. Labels must already exist; do not create labels automatically.
 
@@ -25,6 +25,6 @@ Before a write, verify the target issue/repository and current state. Preserve u
 ## Implement and report
 
 - Keep GitHub Issues as the main task source. Do not duplicate issue status in local task files.
-- Implement the accepted scope, run applicable checks, and summarize outcomes with evidence and limits.
+- Reading or selecting an Issue does not authorize implementation. When the user requests its implementation, apply `.agents/skills/implement/SKILL.md` to the accepted scope, run applicable checks, and summarize outcomes with evidence and limits. Follow `AGENTS.md` for document edits.
 - Close only with existing authorization and satisfied acceptance criteria. Do not equate a passing template check with product completion.
 - Commit, push, and PR creation are separate actions governed by the user's authorization.

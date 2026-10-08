@@ -12,4 +12,4 @@ description: 'Review a change against its intended behavior, domain invariants, 
 5. Present findings ordered by severity, with exact file location, triggering condition, impact, and a suggested direction. Separate confirmed defects from unresolved questions.
 6. If there are no actionable findings, say so and state the verification limits.
 
-A review request authorizes inspection. Apply fixes when the user also asks for them; otherwise deliver findings. Remote PR comments and issue updates require authorization for those writes.
+A review request authorizes inspection. Apply `.agents/skills/implement/SKILL.md` for fixes when the user also asks for them; otherwise deliver findings. Remote PR comments and issue updates require authorization for those writes.

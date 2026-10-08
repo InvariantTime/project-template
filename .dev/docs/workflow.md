@@ -2,7 +2,7 @@
 
 ## Start a task
 
-Read the current request and applicable GitHub Issue, including acceptance criteria and comments. Read product context and relevant domain definitions. If no issue exists, implement work authorized by the user; publishing an issue is a separate authorized operation.
+Read the current request and applicable GitHub Issue, including acceptance criteria and comments. Apply the change authorization rules in `AGENTS.md`: analysis and discussion leave repository code and documentation unchanged; an explicit request is required for edits. Read product context and relevant domain definitions. If no issue exists, implement work authorized by the user; publishing an issue is a separate authorized operation.
 
 Run doctor when the environment is uncertain. Use setup after dependency or toolchain changes. Configure the application's development hook, then launch it with:
 
@@ -14,7 +14,7 @@ Arguments are passed to `project_dev`. The server runs in the foreground so norm
 
 ## Implement and verify
 
-Keep changes within the intended scope. Update conceptual documentation when meanings change; record consequential decisions when their rationale needs to persist. Put repeatable development automation in `.dev/scripts/`.
+Use `implement` for explicitly requested code changes and keep changes within that scope. Update conceptual documentation or record consequential decisions when the user requested those document edits. If a code change reveals a needed document correction outside that authorization, report it in chat. Put repeatable development automation in `.dev/scripts/`.
 
 Run focused checks during implementation, then:
 
@@ -36,6 +36,6 @@ For a long task, switching agents, or continuing in a later session, explicitly 
 
 The directory is ignored by Git. Share the file explicitly when continuing on another machine or with another person. The next agent reads the supplied path and compares the snapshot with the current repository and user request before continuing. A handoff may be stale; record unavailable evidence and resolve discrepancies relevant to the next action.
 
-Temporary task notes can live alongside the handoff when they help the work. Create them on demand. Keep accepted concepts and decisions in `docs/`, and task status in GitHub Issues. These files are local task context and are not loaded automatically as general user memory.
+Temporary task notes can live alongside the handoff when they help the work. Create authored notes when the user requests them. Write accepted concepts and decisions to `docs/` when requested, and keep task status in GitHub Issues. These files are local task context and are not loaded automatically as general user memory.
 
 `.dev/artifacts/` also holds generated check reports and other disposable tool output. The legacy `.artifacts/` directory is ignored for compatibility and has no active writer in this template.
