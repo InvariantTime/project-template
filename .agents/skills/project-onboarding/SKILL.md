@@ -5,7 +5,7 @@ description: 'Adapt this template for a concrete project by defining domain cont
 
 # Project onboarding
 
-Use only when the user explicitly invokes this skill. Its `agents/openai.yaml` disables implicit selection in Codex.
+Use only when the user explicitly invokes this skill. Its `agents/openai.yaml` disables implicit selection in Codex. Apply `AGENTS.md` change authorization: a request to adapt the repository permits the scoped changes below; an invocation asking only to discuss adoption permits analysis without edits. Apply `.agents/skills/implement/SKILL.md` for requested script, configuration, or other code changes.
 
 1. Read `AGENTS.md`, `docs/project.md`, `docs/glossary.md`, `.dev/project.sh`, and `.dev/docs/adoption.md` from the repository root.
 2. Establish the intended product, current scope, and actual stack from the user's request and repository evidence. Ask only for missing decisions that block implementation; record unresolved choices explicitly.

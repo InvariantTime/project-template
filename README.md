@@ -46,7 +46,11 @@ Use GitHub's **Use this template** flow after enabling **Template repository** i
 
 Start agent-guided adaptation explicitly with `$project-onboarding` and the product description. This skill does not start automatically. New skills can opt into the same policy with `new-skill.sh --manual-only`; see [Agent skills](.dev/docs/skills.md).
 
-Ask `$domain-explainer` to answer a focused domain question with short text and a diagram, or a larger question with a black-theme HTML guide. Guides can include illustrations, animation, and interaction. HTML guides are local artifacts by default; see [domain explanation pages](.dev/docs/skills.md#domain-explanation-pages).
+Agents inspect and discuss without changing repository code or documentation. Request edits explicitly in ordinary language, or use `$implement` for code work; see [requested implementation](.dev/docs/skills.md#requested-implementation).
+
+Ask `$domain-discussion` to assess an existing or proposed model, explore tradeoffs, and identify the next question. Use `$domain-modeling` to establish and record agreed meanings; see [domain discussion and modeling](.dev/docs/skills.md#domain-discussion-and-modeling).
+
+Ask `$domain-explainer` to answer a domain question in chat with short text and a diagram, or explicitly request a black-theme HTML guide for a larger explanation. Guides can include illustrations, animation, and interaction. On a request for visual output, ChatGPT and Codex sessions with native visualization support can also show an interactive explanation directly in chat; other agents keep the diagram and HTML routes. HTML guides are local artifacts by default; see [domain explanation pages](.dev/docs/skills.md#domain-explanation-pages).
 
 - [Project context](docs/project.md) and [domain glossary](docs/glossary.md)
 - [Development workflow](.dev/docs/workflow.md) and [environment setup](.dev/docs/environment.md)
